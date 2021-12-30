@@ -442,10 +442,12 @@ $mov = 0;
 
 $FechaDesde = date('d-m-Y', $object->datesp);
 $FechaHasta = date('d-m-Y', $object->dateep);
-
+//echo "<pre>";
+//print_r($object);
 $userstatic = new User($db);
 $userstatic->fetch($object->fk_user);
-$nombre = $userstatic->firstname." ".$userstatic->lastname;
+//$nombre = $userstatic->firstname." ".$userstatic->lastname;
+$nombre = $object->array_options["options_pago001"];
 
 $movb = 0;
 $pdf->SetFont($default_font_type, 'B', $default_font_size);
